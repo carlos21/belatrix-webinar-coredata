@@ -13,9 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        seedGroups()
         return true
     }
 
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        // Called as part of the transition from the ba1234ckground to the active state; here you can undo many of the changes made on entering the background.
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -41,6 +41,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func seedGroups() {
+        Group.deleteAll()
+        
+        let group1 = Group.create() as! Group
+        group1.name = "Grupo 1"
+        let group2 = Group.create() as! Group
+        group2.name = "Grupo 2"
+        let group3 = Group.create() as! Group
+        group3.name = "Grupo 3"
+        CoreDataStack.sharedStack.save()
+        let groups = Group.getAll()
+        print("groups: \(groups.count)")
+    }
 }
 
