@@ -42,14 +42,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func seedGroups() {
+        Note.deleteAll()
         Group.deleteAll()
         
-        let group1 = Group.create() as! Group
-        group1.name = "Grupo 1"
-        let group2 = Group.create() as! Group
-        group2.name = "Grupo 2"
-        let group3 = Group.create() as! Group
-        group3.name = "Grupo 3"
+        let group1 = Group(name: "Grupo 1")
+        let group2 = Group(name: "Grupo 2")
+        let group3 = Group(name: "Grupo 3")
+        
+        let noteA = Note(name: "Note a", body: "Note a", group: group1)
+        let noteB = Note(name: "Note b", body: "Note b", group: group1)
+        let noteC = Note(name: "Note c", body: "Note c", group: group1)
+        
         CoreDataStack.sharedStack.save()
         let groups = Group.getAll()
         print("groups: \(groups.count)")

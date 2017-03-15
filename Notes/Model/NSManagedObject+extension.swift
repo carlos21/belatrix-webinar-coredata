@@ -35,7 +35,7 @@ extension NSManagedObject {
         do {
             return try context.fetch(request)
         } catch {
-            fatalError("Failed to fetch people: \(error)")
+            fatalError("Failed to fetch objects: \(error)")
         }
         return []
     }

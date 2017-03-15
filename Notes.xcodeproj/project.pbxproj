@@ -15,6 +15,12 @@
 		3551ECBE1E77013300E4BE3A /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3551ECBC1E77013300E4BE3A /* NotesViewController.swift */; };
 		3551ECC11E77015800E4BE3A /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3551ECBF1E77015800E4BE3A /* Notes.xcdatamodeld */; };
 		3551ECC31E772E0400E4BE3A /* NSManagedObject+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3551ECC21E772E0400E4BE3A /* NSManagedObject+extension.swift */; };
+		357763FF1E78E2C6005571B1 /* Group+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357763FB1E78E2C6005571B1 /* Group+CoreDataClass.swift */; };
+		357764001E78E2C6005571B1 /* Group+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357763FC1E78E2C6005571B1 /* Group+CoreDataProperties.swift */; };
+		357764011E78E2C6005571B1 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357763FD1E78E2C6005571B1 /* Note+CoreDataClass.swift */; };
+		357764021E78E2C6005571B1 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357763FE1E78E2C6005571B1 /* Note+CoreDataProperties.swift */; };
+		357764041E78F971005571B1 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357764031E78F971005571B1 /* GroupsViewController.swift */; };
+		357764061E78FBAB005571B1 /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357764051E78FBAB005571B1 /* NoteDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +34,12 @@
 		3551ECBC1E77013300E4BE3A /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		3551ECC01E77015800E4BE3A /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 		3551ECC21E772E0400E4BE3A /* NSManagedObject+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+extension.swift"; sourceTree = "<group>"; };
+		357763FB1E78E2C6005571B1 /* Group+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataClass.swift"; sourceTree = "<group>"; };
+		357763FC1E78E2C6005571B1 /* Group+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Group+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		357763FD1E78E2C6005571B1 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		357763FE1E78E2C6005571B1 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		357764031E78F971005571B1 /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		357764051E78FBAB005571B1 /* NoteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +86,10 @@
 		3551ECB91E77013300E4BE3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				357763FB1E78E2C6005571B1 /* Group+CoreDataClass.swift */,
+				357763FC1E78E2C6005571B1 /* Group+CoreDataProperties.swift */,
+				357763FD1E78E2C6005571B1 /* Note+CoreDataClass.swift */,
+				357763FE1E78E2C6005571B1 /* Note+CoreDataProperties.swift */,
 				3551ECBF1E77015800E4BE3A /* Notes.xcdatamodeld */,
 				3551ECBA1E77013300E4BE3A /* CoreDataStack.swift */,
 				3551ECC21E772E0400E4BE3A /* NSManagedObject+extension.swift */,
@@ -85,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				3551ECBC1E77013300E4BE3A /* NotesViewController.swift */,
+				357764031E78F971005571B1 /* GroupsViewController.swift */,
+				357764051E78FBAB005571B1 /* NoteDetailViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -121,6 +139,7 @@
 				TargetAttributes = {
 					3551EC9F1E77005F00E4BE3A = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = RH4PC25J9C;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -162,10 +181,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3551ECC31E772E0400E4BE3A /* NSManagedObject+extension.swift in Sources */,
+				357763FF1E78E2C6005571B1 /* Group+CoreDataClass.swift in Sources */,
 				3551ECBE1E77013300E4BE3A /* NotesViewController.swift in Sources */,
 				3551ECA41E77005F00E4BE3A /* AppDelegate.swift in Sources */,
+				357764041E78F971005571B1 /* GroupsViewController.swift in Sources */,
 				3551ECBD1E77013300E4BE3A /* CoreDataStack.swift in Sources */,
+				357764061E78FBAB005571B1 /* NoteDetailViewController.swift in Sources */,
+				357764011E78E2C6005571B1 /* Note+CoreDataClass.swift in Sources */,
 				3551ECC11E77015800E4BE3A /* Notes.xcdatamodeld in Sources */,
+				357764001E78E2C6005571B1 /* Group+CoreDataProperties.swift in Sources */,
+				357764021E78E2C6005571B1 /* Note+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RH4PC25J9C;
 				INFOPLIST_FILE = Notes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belatrix.Notes;
@@ -300,6 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = RH4PC25J9C;
 				INFOPLIST_FILE = Notes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belatrix.Notes;
@@ -327,6 +354,7 @@
 				3551ECB41E77005F00E4BE3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
