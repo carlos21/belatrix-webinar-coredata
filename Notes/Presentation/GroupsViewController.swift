@@ -21,7 +21,7 @@ class GroupsViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        groups = Group.getAll() as? Array<Group>
+        groups = Group.getAll(sortDescriptors: [NSSortDescriptor(key: "name", ascending: true)]) as? Array<Group>
         self.tableView.reloadData()
     }
     

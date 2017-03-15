@@ -29,9 +29,10 @@ extension NSManagedObject {
         }
     }
     
-    class func getAll(fromContext context: NSManagedObjectContext? = nil) -> [NSManagedObject] {
+    class func getAll(fromContext context: NSManagedObjectContext? = nil, sortDescriptors descriptors:[NSSortDescriptor]? = nil) -> [NSManagedObject] {
         let context = context ?? CoreDataStack.sharedStack.managedObjectContext
         let request = NSFetchRequest<NSManagedObject>(entityName: String(describing: self));
+        request.sortDescriptors = descriptors
         do {
             return try context.fetch(request)
         } catch {
