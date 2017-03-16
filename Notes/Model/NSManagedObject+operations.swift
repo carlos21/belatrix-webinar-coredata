@@ -15,6 +15,11 @@ extension NSManagedObject {
         return NSEntityDescription.insertNewObject(forEntityName: String(describing: self), into: context ?? CoreDataStack.sharedStack.managedObjectContext)
     }
     
+    func delete(fromContext context: NSManagedObjectContext? = nil) {
+        let context = context ?? CoreDataStack.sharedStack.managedObjectContext
+        context.delete(self)
+    }
+    
     class func deleteAll(inContext context: NSManagedObjectContext? = nil) {
         let context = context ?? CoreDataStack.sharedStack.managedObjectContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: self))

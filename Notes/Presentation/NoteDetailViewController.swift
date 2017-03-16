@@ -9,11 +9,18 @@
 import Foundation
 import UIKit
 
-class NoteDetailViewController: UITableViewController {
+class NoteDetailViewController: UIViewController {
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var bodyTextView: UITextView!
+    
+    var note: Note?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        nameTextField.text = note!.name
+        bodyTextView.text = note!.body
     }
     
 }

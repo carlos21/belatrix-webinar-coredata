@@ -20,4 +20,18 @@ public class Note: NSManagedObject {
         self.group = group
     }
     
+    class func getAllByGroup(_ group: Group, inContext context: NSManagedObjectContext? = nil) -> [Note] {
+        print("group: \(group)")
+        let context = context ?? CoreDataStack.sharedStack.managedObjectContext
+        let request = NSFetchRequest<Note>(entityName: String(describing: self));
+        request.predicate = NSPredicate(format: "group == %@", group)
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        do {
+            return try context.fetch(request)
+        } catch {
+            fatalError("Failed to fetch objects: \(error)")
+        }
+        return []
+    }
+    
 }
