@@ -40,9 +40,12 @@ class NotesViewController: UITableViewController {
         let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
             let field = alertController.textFields![0]
             
-            let _ = Note(name: field.text!, body: "", group: self.group!)
+            let note = Note(name: field.text!, body: "", group: self.group!)
             CoreDataStack.sharedStack.save()
-            self.reload()
+            
+            self.notes?.append(note)
+            let indexPath = IndexPath(row: self.notes!.count-1, section: 0)
+            self.tableView.insertRows(at: [indexPath], with: .automatic)
         }
         
         alertController.addTextField { (textField) in
@@ -83,13 +86,17 @@ class NotesViewController: UITableViewController {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let note = notes![indexPath.row]
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            let note = self.notes![indexPath.row]
+            let index = self.notes!.index(of: note)
+            self.notes!.remove(at: index!)
+            
+            tableView.deleteRows(at: [indexPath], with: .automatic)
             note.delete()
             CoreDataStack.sharedStack.save()
-            tableView.reloadData()
         }
+        return [deleteAction]
     }
 
 }

@@ -40,9 +40,11 @@ class GroupsViewController: UITableViewController {
         let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (_) in
             let field = alertController.textFields![0]
             
-            let _ = Group(name: field.text!)
+            let group = Group(name: field.text!)
             CoreDataStack.sharedStack.save()
-            self.reload()
+            self.groups!.append(group)
+            let indexPath = IndexPath(row: self.groups!.count-1, section: 0)
+            self.tableView.insertRows(at: [indexPath], with: .automatic)
         }
         
         alertController.addTextField { (textField) in
